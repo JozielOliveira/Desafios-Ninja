@@ -6,13 +6,15 @@ var longitude
     .then(function (response) {
         latitude = response.data.cidade.lat
         longitude = response.data.cidade.long
+        longitude = parseFloat(longitude)
+        latitude  = parseFloat(latitude)
+        initMap()
     })
     .catch(function (error) {
         console.log(error)
     })
     
-longitude = parseInt(longitude)
-latitude  = parseInt(latitude)
+
 
 function initMap() {
     
